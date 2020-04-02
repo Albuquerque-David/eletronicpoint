@@ -15,7 +15,7 @@
 	<description>API Eletronic Point</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 
 	<dependencies>
@@ -50,6 +50,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.19</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
