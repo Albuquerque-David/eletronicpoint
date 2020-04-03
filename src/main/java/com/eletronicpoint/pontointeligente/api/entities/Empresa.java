@@ -1,5 +1,6 @@
 package com.eletronicpoint.pontointeligente.api.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -16,9 +17,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "empresa")
-public class Empresa 
+public class Empresa implements Serializable
 {
-	private static final long serialVersionUID = 0;
+	private static final long serialVersionUID = 1L;
 	
 	private long id;
 	private String razaoSocial;

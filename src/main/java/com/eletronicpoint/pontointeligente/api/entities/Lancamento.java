@@ -1,5 +1,6 @@
 package com.eletronicpoint.pontointeligente.api.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -21,8 +22,9 @@ import com.eletronicpoint.pontointeligente.enums.TipoEnum;
 
 @Entity
 @Table(name = "lancamento")
-public class Lancamento 
+public class Lancamento implements Serializable
 {
+	private static final long serialVersionUID = 1L;
 	
 	private long id;
 	private Date data;

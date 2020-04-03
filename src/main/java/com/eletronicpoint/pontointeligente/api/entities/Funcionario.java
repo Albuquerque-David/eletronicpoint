@@ -1,5 +1,6 @@
 package com.eletronicpoint.pontointeligente.api.entities;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -24,8 +25,9 @@ import com.eletronicpoint.pontointeligente.enums.PerfilEnum;
 
 @Entity
 @Table(name = "funcionario")
-public class Funcionario 
+public class Funcionario implements Serializable
 {
+	private static final long serialVersionUID = 1L;
 	
 	private long id;
 	private String name;
