@@ -1,4 +1,4 @@
-package com.eletronicpoint.pontointeligente.utils;
+package com.eletronicpoint.pontointeligente.api.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

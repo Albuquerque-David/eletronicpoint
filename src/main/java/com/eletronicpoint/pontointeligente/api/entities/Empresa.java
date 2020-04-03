@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.PreUpdate;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -34,7 +35,9 @@ public class Empresa implements Serializable
 	}
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name= "EMPRESA_SEQUENCE", sequenceName = "EMPRESA_SEQUENCE_ID", initialValue=1, allocationSize = 1)
+	@GeneratedValue(strategy=GenerationType.AUTO, generator = "EMPRESA_SEQUENCE")
+	@Column(name = "id")
 	public long getId()
 	{
 		return id;
@@ -45,7 +48,7 @@ public class Empresa implements Serializable
 		this.id = id;
 	}
 
-	@Column(name = "razao_social", nullable = false)
+	@Column(name = "razao_social")
 	public String getRazaoSocial() 
 	{
 		return razaoSocial;
@@ -55,7 +58,7 @@ public class Empresa implements Serializable
 		this.razaoSocial = razaoSocial;
 	}
 	
-	@Column(name = "cnpj", nullable = false)
+	@Column(name = "cnpj")
 	public String getCnpj() {
 		return cnpj;
 	}
@@ -64,7 +67,7 @@ public class Empresa implements Serializable
 		this.cnpj = cnpj;
 	}
 	
-	@Column(name = "data_criacao", nullable = false)
+	@Column(name = "data_criacao")
 	public Date getDataCriacao() {
 		return dataCriacao;
 	}
@@ -73,7 +76,7 @@ public class Empresa implements Serializable
 		this.dataCriacao = dataCriacao;
 	}
 	
-	@Column(name = "data_atualizacao", nullable = false)
+	@Column(name = "data_atualizacao")
 	public Date getDataAtualizacao() {
 		return dataAtualizacao;
 	}

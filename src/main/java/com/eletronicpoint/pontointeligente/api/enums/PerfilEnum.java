@@ -1,4 +1,4 @@
-package com.eletronicpoint.pontointeligente.enums;
+package com.eletronicpoint.pontointeligente.api.enums;
 
 public enum PerfilEnum {
 	ROLE_ADMIN("ROLE ADMIN"),

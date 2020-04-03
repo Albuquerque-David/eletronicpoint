@@ -18,10 +18,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.eletronicpoint.pontointeligente.enums.PerfilEnum;
+import com.eletronicpoint.pontointeligente.api.enums.PerfilEnum;
 
 @Entity
 @Table(name = "funcionario")
@@ -49,7 +50,8 @@ public class Funcionario implements Serializable
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name= "FUNCIONARIO_SEQUENCE", sequenceName = "FUNCIONARIO_SEQUENCE_ID", initialValue=1, allocationSize = 1)
+	@GeneratedValue(strategy=GenerationType.AUTO, generator = "FUNCIONARIO_SEQUENCE")
 	public long getId() {
 		return id;
 	}
@@ -59,7 +61,7 @@ public class Funcionario implements Serializable
 		this.id = id;
 	}
 	
-	@Column(name = "name", nullable = false)
+	@Column(name = "name")
 	public String getName() {
 		return name;
 	}
@@ -68,7 +70,7 @@ public class Funcionario implements Serializable
 		this.name = name;
 	}
 	
-	@Column(name = "email", nullable = false)
+	@Column(name = "email")
 	public String getEmail() {
 		return email;
 	}
@@ -77,7 +79,7 @@ public class Funcionario implements Serializable
 		this.email = email;
 	}
 	
-	@Column(name = "senha", nullable = false)
+	@Column(name = "senha")
 	public String getSenha() {
 		return senha;
 	}
@@ -86,7 +88,7 @@ public class Funcionario implements Serializable
 		this.senha = senha;
 	}
 	
-	@Column(name = "cpf", nullable = false)
+	@Column(name = "cpf")
 	public String getCpf() {
 		return cpf;
 	}
@@ -95,7 +97,7 @@ public class Funcionario implements Serializable
 		this.cpf = cpf;
 	}
 
-	@Column(name = "valor_hora", nullable = false)
+	@Column(name = "valor_hora")
 	public BigDecimal getValorHora() {
 		return valorHora;
 	}
@@ -110,7 +112,7 @@ public class Funcionario implements Serializable
 		this.valorHora = valorHora;
 	}
 	
-	@Column(name = "qtd_horas_trabalho_dia", nullable = false)
+	@Column(name = "qtd_horas_trabalho_dia")
 	public Float getQtdHorasTrabalhoDia() {
 		return qtdHorasTrabalhoDia;
 	}
@@ -125,7 +127,7 @@ public class Funcionario implements Serializable
 		this.qtdHorasTrabalhoDia = qtdHorasTrabalhoDia;
 	}
 	
-	@Column(name = "qtd_horas_almoco", nullable = false)
+	@Column(name = "qtd_horas_almoco")
 	public Float getQtdHorasAlmoco() {
 		return qtdHorasAlmoco;
 	}
@@ -141,7 +143,7 @@ public class Funcionario implements Serializable
 	}
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "perfil", nullable = false)
+	@Column(name = "perfil")
 	public PerfilEnum getPerfil() {
 		return perfil;
 	}
@@ -150,7 +152,7 @@ public class Funcionario implements Serializable
 		this.perfil = perfil;
 	}
 	
-	@Column(name = "data_criacao", nullable = false)
+	@Column(name = "data_criacao")
 	public Date getDataCriacao() {
 		return dataCriacao;
 	}
@@ -159,7 +161,7 @@ public class Funcionario implements Serializable
 		this.dataCriacao = dataCriacao;
 	}
 	
-	@Column(name = "data_atualizacao", nullable = false)
+	@Column(name = "data_atualizacao")
 	public Date getDataAtualizacao() {
 		return dataAtualizacao;
 	}

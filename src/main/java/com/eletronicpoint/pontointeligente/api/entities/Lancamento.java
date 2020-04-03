@@ -14,11 +14,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.eletronicpoint.pontointeligente.enums.TipoEnum;
+import com.eletronicpoint.pontointeligente.api.enums.TipoEnum;
 
 @Entity
 @Table(name = "lancamento")
@@ -41,7 +42,8 @@ public class Lancamento implements Serializable
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name= "LANCAMENTO_SEQUENCE", sequenceName = "LANCAMENTO_SEQUENCE_ID", initialValue=1, allocationSize = 1)
+	@GeneratedValue(strategy=GenerationType.AUTO, generator = "LANCAMENTO_SEQUENCE")
 	public long getId() {
 		return id;
 	}
@@ -52,7 +54,7 @@ public class Lancamento implements Serializable
 	}
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "data", nullable = false)
+	@Column(name = "data")
 	public Date getData() {
 		return data;
 	}
@@ -61,7 +63,7 @@ public class Lancamento implements Serializable
 		this.data = data;
 	}
 	
-	@Column(name = "descricao", nullable = false)
+	@Column(name = "descricao")
 	public String getDescricao() {
 		return descricao;
 	}
@@ -70,7 +72,7 @@ public class Lancamento implements Serializable
 		this.descricao = descricao;
 	}
 	
-	@Column(name = "localizacao", nullable = false)
+	@Column(name = "localizacao")
 	public String getLocalizacao() {
 		return localizacao;
 	}
@@ -79,7 +81,7 @@ public class Lancamento implements Serializable
 		this.localizacao = localizacao;
 	}
 	
-	@Column(name = "data_criacao", nullable = false)
+	@Column(name = "data_criacao")
 	public Date getDataCriacao() {
 		return dataCriacao;
 	}
@@ -88,7 +90,7 @@ public class Lancamento implements Serializable
 		this.dataCriacao = dataCriacao;
 	}
 	
-	@Column(name = "data_atualizacao", nullable = false)
+	@Column(name = "data_atualizacao")
 	public Date getDataAtualizacao() {
 		return dataAtualizacao;
 	}
@@ -98,7 +100,7 @@ public class Lancamento implements Serializable
 	}
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "tipo", nullable = false)
+	@Column(name = "tipo")
 	public TipoEnum getTipo() {
 		return tipo;
 	}

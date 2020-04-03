@@ -1,4 +1,4 @@
-package com.eletronicpoint.pontointeligente.repositories;
+package com.eletronicpoint.pontointeligente.api.repositories;
 
 import java.util.List;
 
