@@ -38,6 +38,11 @@ public class Empresa
 	{
 		return id;
 	}
+	
+	public void setId(long id)
+	{
+		this.id = id;
+	}
 
 	@Column(name = "razao_social", nullable = false)
 	public String getRazaoSocial() 

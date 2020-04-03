@@ -44,6 +44,11 @@ public class Lancamento
 		return id;
 	}
 	
+	public void setId(long id)
+	{
+		this.id = id;
+	}
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "data", nullable = false)
 	public Date getData() {
