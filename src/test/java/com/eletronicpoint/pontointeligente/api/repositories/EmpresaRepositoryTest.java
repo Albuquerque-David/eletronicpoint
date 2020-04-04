@@ -3,15 +3,11 @@ package com.eletronicpoint.pontointeligente.api.repositories;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.eletronicpoint.pontointeligente.api.EletronicPointApplication;
 import com.eletronicpoint.pontointeligente.api.entities.Empresa;
 
 @RunWith(SpringRunner.class)
@@ -45,7 +41,7 @@ public class EmpresaRepositoryTest
 	@Test
 	public void testFindByCnpj()
 	{
-		System.out.println(empresaRepository.findByCnpj("2"));
+		System.out.println(empresaRepository.findByCnpj("1"));
 	}
 	
 	
